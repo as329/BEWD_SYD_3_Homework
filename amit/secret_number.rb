@@ -39,35 +39,47 @@
 
 puts "Welcome to the game. Amit Shah has created this game."
 puts "What is your name?"
-name = gets
-puts "Hi #{name}"
-puts "The object is to guess a number between 1 and 10 in 3 attempts"
-
+name = gets.chomp
+puts "Hi " + name  + ". The object is to guess a number between 1 and 10 in 3 attempts"
 puts "Make your first guess"
 x = gets.to_i
 secret_number = 3
-if x == secret_number
-	puts "Congratulations, you have won. Game over"
-elsif x > secret_number
-	puts "Too high"
-else
-	puts "Too low"
+
+def the_number_game
+  if x == secret_number
+  puts "Congratulations, you have won. Game over"
+  elsif x > secret_number
+  puts "Too high"
+  else
+  puts "Too low"
+  end
 end
 
-puts "You have two attempts to guess the number. Make your next guess"
-y = gets.to_i
-if y == secret_number
-	puts "Congratulations, you have won. Game over"
-elsif y > secret_number
-	puts "Too high"
-else
-	puts "Too low"
-end
+y = 2
+num = 0
 
-puts "You have one attempt to guess the secret number. Make your last guess and make it count"
-z = gets.to_i
-if z == secret_number
-	puts "Congratulations, you have won. Game over"
-else
-	puts "You have lost. Game over. The secret number is #{secret_number}"
+the_number_game
+while "x != secret number" && "y > num"
+  puts ("Try again, you have #{y} more guesses before the game is over. Enter another number")
+  x = gets.to_i
+  the_number_game
+  y -=1
 end
+puts ("You have no more guesses left. You have lost. Game over")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
